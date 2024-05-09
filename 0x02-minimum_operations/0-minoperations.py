@@ -4,7 +4,7 @@
 
 def minOperations(n):
     """method that calculates the fewest number"""
-    
+
     if n <= 0:
         return 0
     lenght = 1

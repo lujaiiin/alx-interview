@@ -5,7 +5,7 @@
 def makeChange(coins, total):
     """makechange function"""
 
-    if total <= 0:
+    if total < 1:
         return 0
 
     dp = [float('inf')] * (total + 1)

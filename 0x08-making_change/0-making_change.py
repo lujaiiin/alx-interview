@@ -8,11 +8,11 @@ def makeChange(coins, total):
     if total < 1:
         return 0
 
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
+    coins = sorted(coins, reverse=True)
+    change = 0
 
     for coin in coins:
-        for i in range(coin, total + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
-
-    return dp[total] if dp[total] != float('inf') else -1
+        while total - coin >= 0:
+            change += 1
+            total -= coin
+    return change if total == 0 else -1
